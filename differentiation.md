@@ -24,32 +24,9 @@ Our project has good **OO design** and obeys the **Software Design Principles**
 - Classes and functions are well separated according to their purpose and functionality: we have carefully separated our project into more **than 30 classes**. This respects the **Single Responsibility Principle** and lets our project have the **minimum level of code duplication** and the **maximum level of code reuse**, as well as **high coherence and low coupling** between modules.
 
 
-
-**Persistent Shopping Cart**
-
-- We have shopping cart for each user and it is persisted in the database, so that every user can login, add some products to cart, logout, and by next time they return to our website, the products they chose are still there.
-
-
-
-
-
 **Nearest-First** warehouse finding algorithm
 
 - After the customer buying the products and specifies their destination, we will automatically calculate the nearest warehouse for them based on our warehouse location data, to guarantee that they will get their products fast.
-
-
-
-**Password Hashing** for **Security**:
-
-- Every user's password is hashed with md5 algorithm for advanced security
-
-
-
-Session-based login & logout:
-
-- A user will have there user id stored in their session attribute, so that during the entire session of accessing our website, we will continuously have their user id to identify them.
-- Logout is as simple as wipe out their id from their session.
-
 
 
 **Real-time** package status **update** system, with package **arrival notification** :
