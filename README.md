@@ -1,5 +1,7 @@
 # MINIAMAZON
 - **!!Note: since this is an inter-group project, and is supposed to be used together with an UPS server and a World server with the matching protocols, which are not presented in this repo. As a result, although the code presented in this repo is complete and capable by itself, the server will not pass the connection initialization stage and will not be able to present its full functionality (unless the aforementioned complementory projects are also provided.)**  
+
+## How to Use
 - how to run amazon server:   
     enter project root directory  
     `sudo docker-compose build`
