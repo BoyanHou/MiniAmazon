@@ -1,0 +1,96 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.12'
+    }
+}
+
+plugins {
+    id 'org.springframework.boot' version '2.2.6.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'java'
+    //id "com.google.protobuf" version "0.8.12"
+    id "com.google.protobuf" version "0.8.12"
+    id "application"
+}
+
+
+group = 'ece651'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    implementation 'org.json:json:20180813'
+
+    compile('javax.servlet:jstl')
+    compile("org.apache.tomcat.embed:tomcat-embed-jasper")
+
+//    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+//        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+//    }
+
+    // Use JUnit Jupiter API for testing.
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.1'
+
+    // Use JUnit Jupiter Engine for testing.
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.1'
+
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    runtime("com.h2database:h2:1.3.176")
+
+    compile 'com.google.protobuf:protobuf-javalite:3.8.0' //generate java code for protobuf
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainClassName = 'ece651.mini_amazon.MiniAmazonApplication'
+}
+
+// set the .proto filepath here
+sourceSets {
+    main {
+        proto {
+            // In addition to the default 'src/main/proto'
+            srcDir 'src/main/resources'
+            srcDir 'src/main/resources/protobuf_source'
+            // In addition to the default '**/*.proto' (use with caution).
+            // Using an extension other than 'proto' is NOT recommended,
+            // because when proto files are published along with class files, we can
+            // only tell the type of a file from its extension.
+            //include '**/*.protodevel'
+        }
+    }
+}
+
+// configure protobuf
+protobuf {
+    generatedFilesBaseDir = "$projectDir/src/main/java/protobuf_generated"
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.8.0'
+    }
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java {
+                    option "lite"
+                }
+            }
+        }
+    }
+}
+
+

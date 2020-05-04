@@ -1,0 +1,7 @@
+version: '2'
+services:
+    amazon:
+        build:
+          context: .
+        ports:
+            - 34567:1000

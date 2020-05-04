@@ -1,0 +1,11 @@
+INSERT INTO PRODUCT (id, photo, price, description, category) VALUES(0, 'img1.JPG', 64, 'Cheese Grilled Lobster', 'Entree');
+INSERT INTO PRODUCT (id, photo, price, description, category) VALUES(1, 'img2.JPG', 52, 'Bacon Carbonara', 'Entree');
+INSERT INTO PRODUCT (id, photo, price, description, category) VALUES(2, 'img3.JPG', 88, 'Lamb Rack', 'Entree');
+INSERT INTO PRODUCT (id, photo, price, description, category) VALUES(3, 'img4.JPG', 48, 'Cumin Spareribs w/ Salad', 'Entree');
+INSERT INTO PRODUCT (id, photo, price, description, category) VALUES(4, 'img5.JPG', 20, 'Tiramisu', 'Dessert');
+INSERT INTO PRODUCT (id, photo, price, description, category) VALUES(5, 'img6.JPG', 48, 'Beef Tataki', 'Appetizer');
+INSERT INTO PRODUCT (id, photo, price, description, category) VALUES(6, 'img7.JPG', 36, 'Salmon w/ Shrimp Salad', 'Entree');
+INSERT INTO PRODUCT (id, photo, price, description, category) VALUES(7, 'img8.JPG', 88, 'Chinese Combo', 'Combo');
+INSERT INTO WARE_HOUSE (whid, x, y, stock) VALUES(1, 2, 7, '{}');
+INSERT INTO WARE_HOUSE (whid, x, y, stock) VALUES(2, 50, 100, '{}');
+INSERT INTO WARE_HOUSE (whid, x, y, stock) VALUES(3, 0, 0, '{}');
